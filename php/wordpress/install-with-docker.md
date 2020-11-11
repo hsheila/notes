@@ -2,7 +2,8 @@
 
 ## 基础安装
 
-==默认已完成Docker的安装==
+**默认Docker已安装**
+
 ### 下载wordpress镜像
 ```
 docker pull wordpress
@@ -42,8 +43,9 @@ define("FS_CHMOD_FILE", 0777);
 ```
 
 ### 重新发布镜像
+```
 docker commit  <wordpress-container-name> <new-image-name>[:<tag>]
-
+```
 ### 后续将直接启动容器即可
 ```
 docker start mywordpress
@@ -54,6 +56,7 @@ docker start mywordpress
 打开wp-admin/includes/file.php程序文件，删除505-616行的如下代码：
 ```
 if ( $is_active && 'php' === $extension ) {
+//省略代码
 }
 ```
 [参考](https://zmingcx.com/unable-to-communicate-back-with-site-to-check-for-fatal-errors.html)
